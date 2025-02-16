@@ -63,7 +63,8 @@ switch(opcionMenuEntero) {
             totalPago += precioStand * cantidadDeStands
             totalPago += totalPago * mora
             }
-        } while (diasDeAtraso>dia)
-        alert(`El total a pagar es: ${totalPago} Quetzales`)
+            dia++
+        } while (diasDeAtraso>=dia)
+        alert(`El total a pagar es: ${totalPago.toFixed(2)} Quetzales`)
         break       
 }

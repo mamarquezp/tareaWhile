@@ -22,7 +22,30 @@ do {
 switch(opcionMenuEntero) {
     case 1:
         alert(`Registro de ventas`)
-        
+        let cantidad = 0
+        let precioProducto = 0
+        let sumaVenta = 0
+        let continuar = true
+        let preguntaContinuar = null
+        let preguntaContinuarEntero = 0
+        do {            
+            cantidad = Number( prompt(`Ingresa la cantidad de artículos vendidos`))
+            precioProducto = Number( prompt(`Ingresa el precio del producto`))
+            sumaVenta += cantidad * precioProducto
+            preguntaContinuar = prompt(`¿Desea añadir otra venta?
+            1 - Si
+            2- No`)
+            preguntaContinuarEntero = parseInt(preguntaContinuar)
+            switch(preguntaContinuarEntero){
+                case 1:
+                    continuar = true
+                    break
+                case 2:
+                    continuar = false
+                    break
+            }
+        } while (continuar)
+        alert(`El total de la venta es: ${sumaVenta.toFixed(2)} Quetzales`)
         break
     case 2:
         alert(`Conversión de Divisas`)
